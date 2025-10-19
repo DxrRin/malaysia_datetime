@@ -1,3 +1,4 @@
+# setting_time.py
 """
 setting_time.py
 
@@ -35,9 +36,17 @@ def get_malaysia_date_numeric():
     now = get_malaysia_datetime()
     return now.strftime("%d/%m/%Y")
 
+def get_malaysia_now():
+    """Return the current Malaysia datetime as a string"""
+    time = get_malaysia_time()
+    date = get_malaysia_date_short()
+    return f"{time}, {date}"
 
+# Optional: quick test if run directly
+# You can remove or comment out this block if you just want to use the module in your projects
 if __name__ == "__main__":
     print("Malaysia Time:", get_malaysia_time())
     print("Malaysia Date (Full Month):", get_malaysia_date_full())
     print("Malaysia Date (Short Month):", get_malaysia_date_short())
     print("Malaysia Date (Numeric):", get_malaysia_date_numeric())
+    print("Malaysia Now:", get_malaysia_now())
